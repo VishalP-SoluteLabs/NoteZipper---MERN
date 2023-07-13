@@ -30,7 +30,7 @@ console.log(userInfo.token)
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.get(`http://localhost:5000/api/notes`, config);
+    const { data } = await axios.get(`https://note-zipper-hho3.onrender.com/api/notes`, config);
     console.log("NOOOTTTEEE" , data)
     dispatch({
       type: NOTES_LIST_SUCCESS,
@@ -68,7 +68,7 @@ export const createNoteAction =
 
 
       const { data } = await axios.post(
-        `http://localhost:5000/api/notes/create`,
+        `https://note-zipper-hho3.onrender.com/api/notes/create`,
         { title, content, category },
         config
       );
@@ -106,7 +106,7 @@ export const createNoteAction =
         },
       };
   
-      const { data } = await axios.delete(`http://localhost:5000/api/notes/${id}`, config);
+      const { data } = await axios.delete(`https://note-zipper-hho3.onrender.com/api/notes/${id}`, config);
   
       dispatch({
         type: NOTES_DELETE_SUCCESS,
@@ -145,7 +145,7 @@ export const createNoteAction =
       };
   
       const { data } = await axios.put(
-        `/api/notes/${id}`,
+        `https://note-zipper-hho3.onrender.com/api/notes/${id}`,
         { title, content, category },
         config
       );
