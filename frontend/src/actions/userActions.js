@@ -21,7 +21,7 @@ export const login = (email, password) => async (dispatch) => {
       },
     };
     const {data} = await axios.post(
-      "http://localhost:5000/api/users/login",
+      "https://note-zipper-hho3.onrender.com/api/users/login",
       {
         email,
         password,
@@ -58,7 +58,7 @@ export const register = (name, email, password, pic) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "http://localhost:5000/api/users",
+      "https://note-zipper-hho3.onrender.com/api/users",
       {
         name,
         email,
@@ -99,7 +99,7 @@ export const updateProfile = (user) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.post("http://localhost:5000/api/users/profile", user, config);
+    const { data } = await axios.post("https://note-zipper-hho3.onrender.com/api/users/profile", user, config);
 
     dispatch({ type: USER_UPDATE_SUCCESS, payload: data });
 
